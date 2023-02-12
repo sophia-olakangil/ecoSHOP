@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>ecoSHOP</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+</head>
+
+
+
+<h2>Sort By:</h2>
+
+<style>
+h1, body, h2 {font-family: "Karma", sans-serif}
+
+.tag {
+  display: inline-block;
+  background-color: lightgray;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.item {
+  display: none;
+}
+
+.item.show {
+  display: block;
+}
+</style>
+<body>
+
+<div id="tags">
+  <div class="tag" data-filter="tag1">Price</div>
+  <div class="tag" data-filter="tag2">Emission Level</div>
+</div>
+
+<div id="items">
+  <div class="item tag1">Martha's Fresh Beef</div>
+  <div class="item tag1">Best Tomatoes</div>
+  <div class="item tag1">Premium Tomatoes</div>
+  <div class="item tag1">Right Value Spinach</div>
+  <div class="item tag1">Organic Spinach</div>
+  <div class="item tag1">Tomato Fresh</div>
+  <div class="item tag1">Grade B Medium Eggs</div>
+  <div class="item tag1">Wild Market Ground Beef</div>
+  <div class="item tag1">Mr. Dill's Pickles</div>
+  <div class="item tag1">Jar O' Pickle</div>
+  <div class="item tag1">Organic Classic Pickles</div>
+  <div class="item tag1">EcoFarm Organic Spinach</div>
+  <div class="item tag1">Organic Grade A Eggs</div>
+  <div class="item tag1">Fresh Organic Eggs</div>
+</div>
+
+<div id="items">
+  <div class="item tag2">Wild Market Ground Beef</div>
+  <div class="item tag2">Mr. Dill's Pickles</div>
+  <div class="item tag2">Premium Tomatoes</div>
+  <div class="item tag2">EcoFarm Organic Spinach</div>
+  <div class="item tag2">Fresh Organic Eggs</div>
+  <div class="item tag2">Organic Spinach</div>
+  <div class="item tag2">Tomato Fresh</div>
+  <div class="item tag2">Jar O' Pickle</div>
+  <div class="item tag2">Organic Grade A Eggs</div>
+  <div class="item tag2">Grade B Medium Eggs</div>
+  <div class="item tag2">Organic Classic Pickles</div>
+  <div class="item tag2">Right Value Spinach</div>
+  <div class="item tag2">Best Tomatoes</div>
+  <div class="item tag2">Martha's Fresh Beef</div>
+</div>
+
+
+<script>
+
+var tags = document.querySelectorAll("#tags .tag");
+var items = document.querySelectorAll("#items .item");
+
+for (var i = 0; i < tags.length; i++) {
+  tags[i].addEventListener("click", function() {
+    var filter = this.getAttribute("data-filter");
+
+    for (var j = 0; j < tags.length; j++) {
+      tags[j].style.backgroundColor = "lightgray";
+      tags[j].style.color = "black";
+    }
+
+    this.style.backgroundColor = "red";
+    this.style.color = "white";
+
+    for (var j = 0; j < items.length; j++) {
+      if (filter === "all" || items[j].classList.contains(filter)) {
+        items[j].classList.add("show");
+      } else {
+        items[j].classList.remove("show");
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>

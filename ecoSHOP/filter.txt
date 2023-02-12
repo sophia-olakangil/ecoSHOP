@@ -1,0 +1,61 @@
+<style>
+.tag {
+  display: inline-block;
+  background-color: lightgray;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.item {
+  display: none;
+}
+
+.item.show {
+  display: block;
+}
+</style>
+
+<div id="tags">
+  <div class="tag" data-filter="all">All</div>
+  <div class="tag" data-filter="tag1">Tag 1</div>
+  <div class="tag" data-filter="tag2">Tag 2</div>
+  <div class="tag" data-filter="tag3">Tag 3</div>
+</div>
+
+<div id="items">
+  <div class="item tag1">Item 1</div>
+  <div class="item tag2">Item 2</div>
+  <div class="item tag3">Item 3</div>
+  <div class="item tag1 tag2">Item 4</div>
+  <div class="item tag2 tag3">Item 5</div>
+</div>
+
+<script>
+var tags = document.querySelectorAll("#tags .tag");
+var items = document.querySelectorAll("#items .item");
+
+for (var i = 0; i < tags.length; i++) {
+  tags[i].addEventListener("click", function() {
+    var filter = this.getAttribute("data-filter");
+
+    for (var j = 0; j < tags.length; j++) {
+      tags[j].style.backgroundColor = "lightgray";
+      tags[j].style.color = "black";
+    }
+
+    this.style.backgroundColor = "red";
+    this.style.color = "white";
+
+    for (var j = 0; j < items.length; j++) {
+      if (filter === "all" || items[j].classList.contains(filter)) {
+        items[j].classList.add("show");
+      } else {
+        items[j].classList.remove("show");
+      }
+    }
+  });
+}
+</script>

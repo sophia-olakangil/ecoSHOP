@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<!-- still need to hard Code a grocery list input and the "results" --> 
+<html>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+
+  <style>
+  head, h1, body, h2 {font-family: "Karma", sans-serif}
+  </style>
+
+  <head>
+    <title>Grocery List</title>
+  </head>
+  <body>
+    <h1>Grocery List</h1>
+    <form action="">
+      <label for="grocery-item">Enter your grocery items below and ecoSHOP will compile an optimized grocery list to meet your carbon emission goals and budget! :)</label><br><br>
+      <textarea id="grocery-item" rows="5" cols="30"></textarea><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    <br>
+    <h2>Output</h2>
+    <table>
+      <tr>
+        <th>Item</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+        <th>   Price        </th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <th>  Emission</th>
+      </tr>
+
+      <!-- Output the items, prices, and categories here -->
+      <tr>
+        <td>Wild Market Ground Beef</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>$$</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Low Carbon Emission Levels.</td>
+      </tr>
+      <tr>
+        <td>Wild Market Ground Beef</td>
+        <td></td>
+        <td>$$</td>
+        <td></td>
+        <td>Low Carbon Emission Levels.</td>
+      </tr>
+      <tr>
+        <td>Wild Market Ground Beef</td>
+        <td></td>
+        <td>$$</td>
+        <td></td>
+        <td>Low Carbon Emission Levels.</td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

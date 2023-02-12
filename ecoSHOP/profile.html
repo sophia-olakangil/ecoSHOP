@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+
+
+
+    <title>Item Search</title>
+    <style>
+      #searchBar {
+        padding: 10px;
+        font-size: 16px;
+        border: solid 1px #ddd;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        
+      }
+      .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: "Karma";
+}
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: solid 1px #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th, td {
+        padding: 10px;
+        text-align: left;
+        border: solid 1px #ddd;
+      }
+
+      th {
+        background-color: #ddd;
+      }
+
+      body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+        .w3-bar-block .w3-bar-item {padding:20px}
+
+        .column {
+  float: left;
+  width: 30%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.coupon {
+  border: 5px dotted #bbb;
+  width: 80%;
+  border-radius: 15px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.container {
+  padding: 2px 16px;
+  background-color: #f1f1f1;
+}
+
+.promo {
+  background: #ccc;
+  padding: 3px;
+}
+
+.expire {
+  color: red;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: black;
+}
+
+#myBar {
+  width: 30%;
+  height: 30px;
+  background-color: #04AA6D;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left w3-pale-blue" style="display:none;z-index:2;width:15%;min-width:300px" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()"
+    class="w3-bar-item w3-button width:5%">X</a>
+    <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button ">Home</a>
+    <a href="productList.html" onclick="w3_close()" class="w3-bar-item w3-button">Product List</a>
+    <a href="profile.html" onclick="w3_close()" class="w3-bar-item w3-button ">User Profile</a>
+  </nav>
+  
+  <!-- Top menu -->
+  <div class="w3-top">
+    <div class="w3-pale-green w3-xlarge" style="max-width:full;margin:auto" >
+      <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+      <div class="w3-center w3-padding-16">ecoSHOP</div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="column">
+        <div style="padding-left: 60px; padding-top: 75px ">
+            <h2 style="text-align:left; padding-left: 19px; padding-top: 50px;">ecoSHOP User Profile</h2>
+            
+            <div class="card w3-left" >
+              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/450px-SpongeBob_SquarePants_character.svg.png" alt="Spongebob" style="width:90%">
+              <h1>Spongebob Squarepants</h1>
+            </div>
+            </div>
+    </div>
+    <div class="column">
+        <div style="margin-top: 200px;">
+            <input type="text" id="searchBar">
+            <button onclick="search()">Search</button>
+            <br><br>
+            <table id="itemTable">
+              <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Carbon Emission Level</th>
+              </tr>
+            </table>
+        </div>
+    </div>
+    
+    
+  </div>
+  <br>
+  <br>
+  <br>
+ <div class="w3-center">
+  <h1>ecoPOINTS</h1>
+
+<div id="myProgress">
+  <div id="myBar">30 Points</div>
+</div>
+
+<br>
+<button onclick="ShowAndHide()">Redeem Rewards</button> 
+</div>
+
+<div class="coupon w3-bar-block" style="display:none;z-index:2;width:15%;min-width:300px" id="coupon">
+    <div class="container">
+    </div>
+    <img src="https://www.signsworldwide.com/images/thumbnails/592/234/detailed/3/Save-Big!.jpg" alt="Save Big!" style="width:100%;">
+    <div class="container" style="background-color:white">
+      <h2><b>$15 OFF YOUR PURCHASE</b></h2> 
+    </div>
+    <div class="container">
+      <p>Use Promo Code: <span class="promo">ECO15</span></p>
+      <p class="expire">Expires: May 03, 2023</p>
+    </div>
+
+
+  
+  
+
+    <script>
+      const items = [
+      { title: "Martha's Fresh Beef", level: "p1", description: "1lb Ground Beef.",  carbonL: "High Carbon Emission Levels.",price: "$" , src: "https://embed.widencdn.net/img/beef/4hh1pywcnj/800x600px/Grind_Fine_85.psd?keep=c&u=7fueml"},
+          { title: "Wild Market Ground Beef", level: "p3", description: "1LB Ground Beef.", carbonL: "Low Carbon Emission Levels.", price: "$$", src: "https://images.albertsons-media.com/is/image/ABS/188100109?$ng-ecom-pdp-desktop$&defaultImage=Not_Available" },
+          { title: "Mr. Dill's Pickles", level: "p3", description: "32oz pickle jar", carbonL:" Low Carbon Emission Levels", price: "$$" , src: "https://pickleguys.com/wp-content/uploads/sour-pickles-001.jpg"},
+          { title: "Jar O' Pickles", level: "p2", description: "32oz pickle jar", carbonL: "Medium Carbon Emission Levels", price: "$$", src: "https://hillcountryhomestyle.com/wp-content/uploads/2016/04/all-pickles-600x600.png"},
+          { title: "Organic Classic Pickles", level: "p1", description: "32oz pickle jar.", carbonL:"High Carbon Emission Levels", price: "$$" , src: "https://www.mrswages.com/wp-content/uploads/2015/10/GettyImages-1155711777-scaled.jpg"},
+          { title: "Best Tomatoes", level: "p1", description: "1lb cocktail tomatoes", carbonL:" High Carbon Emission Levels", price: "$" , src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfGFNlDl8BovCci6J0nZN-TMomKrPfVy84jw&usqp=CAU"},
+          { title: "Tomato Fresh", level: "p2", description: "1lb cocktail tomatoes", carbonL:"Medium Carbon Emission Levels", price: "$" , src: "https://www.houstonmethodist.org/-/media/images/contenthub/article-images/nutrition/2021/hub_tomatoesnightshadesaretheyreallybadforyou_article.ashx?mw=1382&hash=AEC1E8FA5D2D6D1F648D67F13DC0AB62"},
+          { title: "Premium Tomatoes", level: "p3", description: "1lb cocktail tomatoes.", carbonL:"Low Carbon Emission Levels", price: "$" , src: "https://www.marketplace.org/wp-content/uploads/2022/09/IMG_6455-e1664464874146.jpg?fit=740%2C555"},
+          { title: "Right Value Spinach", level: "p1", description: "12oz baby spinach.", carbonL:"High Carbon Emission Levels", price: "$" , src: "https://images.heb.com/is/image/HEBGrocery/000319108?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0"},
+          { title: "Organic Spinach", level: "p2", description: "12oz baby spinach", carbonL:"Medium Carbon Emission Levels", price: "$" , src: "https://cdn.shopify.com/s/files/1/0017/9234/4153/products/Spinach43_715x.jpg?v=1602165575"},
+          { title: "EcoFarm Organic Spinach", level: "p3", description: "12oz baby spinach", carbonL:"Low Carbon Emission Levels", price: "$$" , src: "https://eadn-wc01-4177395.nxedge.io/wp-content/uploads/2020/05/iStock-916931074-2-scaled.jpg"},
+          { title: "Grade B Medium Eggs", level: "p1", description: "1 Dozen brown eggs",carbonL:"High Carbon Emission Levels", price: "$" , src: "https://eggtrayequipment.com/wp-content/uploads/2020/01/egg-cartons.jpg"},
+          { title: "Organic Grade A Eggs", level: "p2", description: "1 Dozen brown eggs", carbonL:"Medium Carbon Emission Levels", price: "$$" , src: "https://talkingmathwithkids-dev.sentree.io/wp-content/uploads/2020/10/eggs-photo-2-1024x768.jpg"},
+          { title: "Fresh Organic Eggs", level: "p3", description: "1 Dozen brown eggs", carbonL:"Low Carbon Emission Levels", price: "$$$" , src: "https://cdn.shopify.com/s/files/1/0452/2406/7239/products/Product-Image-egg-carton-12-pulp2.jpg?v=1651811746"},
+      ];
+
+      function search() {
+        const searchTerm = document.getElementById("searchBar").value;
+        const tableBody = document.getElementById("itemTable");
+
+        while (tableBody.rows.length > 1) {
+          tableBody.deleteRow(-1);
+        }
+
+        for (let i = 0; i < items.length; i++) {
+          if (items[i].title.includes(searchTerm)) {
+            const row = tableBody.insertRow();
+            row.insertCell().innerHTML = items[i].title;
+            row.insertCell().innerHTML = "1";
+            row.insertCell().innerHTML = items[i].price;
+            row.insertCell().innerHTML = items[i].carbonL;
+          }
+        }
+      }
+
+      function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+function ShowAndHide() {
+    document.getElementById('coupon').style.display = "block";
+}
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grocery List</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+    </style>
+  </head>
+  <body>
+    <h1>Grocery List</h1>
+    <form>
+      <input type="text" id="list" placeholder="Enter items separated by commas">
+      <input type="button" value="Submit" onclick="displayTable()">
+    </form>
+    <table id="table">
+      <br>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Carbon Emission Level</th>
+      </tr>
+    </table>
+    <script src="script.js"></script>
+  
+
+
+<script>
+function displayTable() {
+  var input = document.getElementById("list").value;
+  var items = input.split(",");
+  var table = document.getElementById("table");
+  for (var i = 0; i < items.length; i++) {
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    cell1.innerHTML = items[i];
+    cell2.innerHTML = "1";
+    cell3.innerHTML = "$";
+    cell4.innerHTML = "LOW";
+  
+    
+  }
+  
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    cell1.innerHTML = "TOTAl";
+    cell2.innerHTML = "3";
+    cell3.innerHTML = "$";
+    cell4.innerHTML = "LOW";
+  
+    
+
+
+  
+}
+</script>
+</body>
+</html>

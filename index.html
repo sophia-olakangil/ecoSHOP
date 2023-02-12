@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+</head>
+<body>
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left w3-pale-blue" style="display:none;z-index:2;width:15%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-bar-item w3-button width:5%">X</a>
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button ">Home</a>
+  <a href="productList.html" onclick="w3_close()" class="w3-bar-item w3-button">Product List</a>
+  <a href="profile.html" onclick="w3_close()" class="w3-bar-item w3-button ">User Profile</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-pale-green w3-xlarge" style="max-width:full;margin:auto" >
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+    <div class="w3-center w3-padding-16">ecoSHOP</div>
+  </div>
+</div>
+  
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+  
+  <hr id="about">
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32 w3-center">  
+    <h2>Welcome to ecoSHOP!</h2><br>
+    <img src="https://static.israel21c.org/www/uploads/2021/12/shutterstock_footprint-1520x855.jpg" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
+    <br>
+    <br>
+    <div>
+      <h2 style="background-color: #ddffdd; max-width: full;">Our Mission</h2>
+    </div>
+    <div class="w3-padding-32">
+      <p>Our mission is to reduce the carbon footprint of our community by streamlining eco-friendly grocery options and promoting sustainable shopping habits. We believe that small changes in our daily routines can have a big impact on the environment, and grocery shopping is a great place to start. By identifying products from environmentally responsible suppliers, we aim to make it easy and accessible for people to reduce their carbon emissions through their daily shopping choices. Our commitment to sustainability extends beyond just our products, as we also strive to minimize waste and promote circular packaging solutions. Join us in creating a cleaner and healthier planet, one grocery purchase at a time.</p>
+    </div>
+  </div>
+  <hr>
+  
+ <!-- First Photo Grid-->
+<style>
+
+
+
+.image-container1 {
+ 
+  background-color: green;
+  max-width: 75%;
+  left: 12.5%;
+  position: relative;
+  height: 100px;
+}
+
+.image-container2 {
+  background-color: orange;
+  max-width: 75%;
+  left: 12.5%;
+  position: relative;
+  height: 100px;
+}
+
+.image-container3 {
+  background-color: red;
+  max-width: 75%;
+  left: 12.5%;
+  position: relative;
+  height: 100px;
+}
+.image-container4 {
+  background-color: #ddffdd;
+  max-width: full;
+  left: ;
+  position: relative;
+  height: 50px;
+}
+
+.text {
+  background-color: white;
+  color: black;
+  font-size: 2vw; 
+  font-weight: bold;
+  margin: 0 auto;
+  padding:4px;
+  width: 30%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+}
+</style>
+</head>
+<body>
+
+<h2 style="background-color: #ddffdd; max-width: full; text-align: center;">Carbon Emission Levels</h2>
+
+<p>ecoSHOP measures the carbon emission level of each product using three levels. The lower the carbon emission level of a product, the better it is for the environment. Each level is worth a certain amount of ecoPoints. The more points you obtain through eco-friendly purchase, the closer you get to earning rewards for future grocery purchases!</p>
+
+<br>
+<br>
+<div class="image-container1">
+  <div class="text">LOW - 10 points</div>
+</div>
+
+<div class="image-container2">
+  <div class="text">MEDIUM - 5 points</div>
+</div>
+
+<div class="image-container3">
+  <div class="text">HIGH - 0 points</div>
+</div>
+<br>
+<br>
+
+</body>
+</html>
+
+
+  
+<!-- End page content -->
+
+
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+
